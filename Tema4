@@ -1,0 +1,72 @@
+public class App {
+    public static void main(String[] args) throws Exception {
+        SmartDevice sd = new SmartDevice(4,16,200);
+        SmartPhone sp = new SmartPhone(8,64,200,"Nokia");
+        SmartWhatch sw = new SmartWhatch(4,16,150,"AppleWatch","Deportivo",150);
+
+        sd.Informacion();
+        sp.informacionPhone();
+        sw.informacionWatch();
+    }
+}
+
+public class SmartDevice {
+    
+    public Integer memoriaRAM;
+    public Integer capacidad;
+    public double precio;
+public SmartDevice(){}
+public SmartDevice(Integer RAM,Integer Go,double p)
+{
+    this.memoriaRAM = RAM;
+    this.capacidad = Go;
+    this.precio = p;
+}
+public void Informacion()
+{
+    System.out.println(" Memoria RAM: "+memoriaRAM+"\n Capacidad: "+capacidad+"\n Precio: ");
+}
+}
+
+
+public class SmartPhone extends SmartDevice{
+    public String Marca;
+
+public SmartPhone(Integer RAM,Integer Go,double p,String Marca)
+{
+    super(RAM,Go,p);
+    this.Marca = Marca;
+}
+ public void informacionPhone() {
+       
+    System.out.println("Marca: " + Marca);     
+    System.out.println("RAM: " + memoriaRAM + "GB");       
+    System.out.println("Storage: " + capacidad + "GB");
+    System.out.println("Precio: $" +precio);
+    
+}
+
+    
+}
+
+
+public class SmartWhatch extends SmartDevice{
+    public String tipoSW;
+    public double precioSW;
+    
+public SmartWhatch(Integer RAM,Integer Go,double p,String Marca,String tSW,double pSW)
+    {
+        super(RAM,Go,p);
+        this.tipoSW = tSW;
+        this.precioSW = pSW;
+    }
+     public void informacionWatch() {
+           
+             
+        System.out.println("RAM: " + memoriaRAM + "GB");       
+        System.out.println("Capacidad: " + capacidad + "GB");
+        System.out.println("Tipo de SmartWhatch: "+tipoSW);
+        System.out.println("Precio: "+precioSW);
+        
+    }
+}
