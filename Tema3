@@ -1,0 +1,12 @@
+public class App {
+    public static void main(String[] args) throws Exception {
+        String textos [] = {"Hola","",", Buenos"," dias","!"};
+        String resultado = "";
+        for(String texto : textos)
+        {
+              resultado = "Hola"+""+", Buenos"+" dias"+"!";
+        }
+
+        System.out.println(resultado);
+    }
+}
